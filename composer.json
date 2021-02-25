@@ -18,11 +18,6 @@
             "onepiece\\toolkit\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "onepiece\\test\\": "test/"
-        }
-    },
     "authors": [
         {
             "name": "onepiece",
