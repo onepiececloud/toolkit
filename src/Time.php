@@ -90,7 +90,7 @@ class Time
      * 返回本月开始和结束的时间戳
      * @return array
      */
-    public static function month($everyDay = false)
+    public static function month()
     {
         list($y, $m, $t) = explode('-', date('Y-m-t'));
         return [
@@ -100,7 +100,7 @@ class Time
     }
 
     /**
-     * 返回本月开始和结束的时间戳
+     * 返回指定时间的月份开始和结束的时间戳
      * @param integer $time 本月任意时间戳
      * @return array
      */
@@ -153,23 +153,15 @@ class Time
         ];
     }
 
-    public static function dayOf()
-    {
-
-    }
-
     /**
      * 获取几天前零点到现在/昨日结束的时间戳
      * @param int $day 天数
      * @param bool $now 返回现在或者昨天结束时间戳
      * @return array
      */
-    public static function dayToNow($day = 1, $now = true)
+    public static function dayToNow($day = 1)
     {
         $end = time();
-        if (!$now) {
-            list($foo, $end) = self::yesterday();
-        }
 
         return [
             mktime(0, 0, 0, date('m'), date('d') - $day, date('Y')),
